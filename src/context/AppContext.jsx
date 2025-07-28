@@ -8,10 +8,7 @@ const AppContextProvider = ({ children }) => {
     const currencySymbol = "$";
     const backendUrl = process.env.BACKEND_URL || "http://localhost:4000";
     const [doctors, setDoctors] = useState([]);
-    const value = {
-        doctors,
-        currencySymbol,
-    };
+    const [token, setToken] = useState(localStorage.getItem("token") || "");
 
     const getDoctors = async () => {
         try {
@@ -26,6 +23,14 @@ const AppContextProvider = ({ children }) => {
             console.error("Error fetching doctors:", error);
             toast.error(error.message || "Failed to fetch doctors. Please try again later.");
         }
+    };
+
+    const value = {
+        doctors,
+        currencySymbol,
+        token,
+        setToken,
+        backendUrl,
     };
 
     useEffect(() => {
