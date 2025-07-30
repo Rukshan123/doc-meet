@@ -87,7 +87,7 @@ const MyAppointments = () => {
 
                         <div className="flex flex-col gap-2 justify-end">
                             {!item.cancelled && (
-                                <button className="text-sm text-stone-500 text-center sm:min-w-48 py-2 border rounded hover:text-white hover:bg-primary transition-all duration-300">
+                                <button className="hidden text-sm text-stone-500 text-center sm:min-w-48 py-2 border rounded hover:text-white hover:bg-primary transition-all duration-300">
                                     Pay Online
                                 </button>
                             )}
